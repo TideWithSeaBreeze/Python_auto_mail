@@ -17,8 +17,10 @@ Use SQL and a little html can make e-mail by system.
 三、数据库需要做的操作：
 （一）表创建：需要创建两张关键表：am_auto_mail_jobs（自动邮件任务表）、am_auto_mail_attachments（自动邮件附件表）；
 SQL语句如下：
+```sql
 create table am_auto_mail_jobs(job_id int auto_increment primary key,title varchar(200) not null,receiver varchar(300) not null,mail_body varchar(3000) not null,is_done int not null);
 create table am_auto_mail_attachments(attachment_id int auto_increment primary key,job_id int not null,workbook_title varchar(200) not null,workbook_position varchar(200) not null,worksheet_1_title varchar(100) not null,worksheet_1_start int not null,worksheet_1_sql varchar(3000) not null,worksheet_2_title varchar(100),worksheet_2_start int,worksheet_2_sql varchar(3000) not null,worksheet_3_title varchar(100),worksheet_3_start int,worksheet_3_sql varchar(3000) not null,worksheet_4_title varchar(100),worksheet_4_start int,worksheet_4_sql varchar(3000) not null,is_done int not null);
+```
 (二）配置auto_mail的数据库账号：
 不建议直接使用root账户，建议配置专用账号，开放am_auto_mail_jobs（自动邮件任务表）、am_auto_mail_attachments（自动邮件附件表）两个表的增删改权限，开放其他表的查询权限；
 
