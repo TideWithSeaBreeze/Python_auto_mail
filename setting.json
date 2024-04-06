@@ -1,0 +1,15 @@
+{
+    "DataBase":{
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"admin",
+        "database":"database_ebusiness"
+    },
+    "email":{
+        "sender":"admin@gmail.com",
+        "authorization_code":"stmp_authorization_code",
+        "stmp_server":"smtp.gmail.com",
+        "stmp_server_port":465
+    }
+}
